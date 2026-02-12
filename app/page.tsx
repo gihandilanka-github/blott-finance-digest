@@ -1,4 +1,10 @@
-import CheckButton from './components/CheckButton';
+import { Metadata } from 'next';
+import CheckButton from '@/components/CheckButton';
+import { siteName } from '@/lib/config';
+
+export const metadata: Metadata = {
+  title: `${siteName} - Home`,
+};
 
 export default function Home() {
   return (
