@@ -16,8 +16,8 @@ export default function Home() {
               <div className="title-main text-[40px] md:text-[80px]">
                 Latest News
               </div>
-              <div className="flex items-start gap-4">
-                <div className="title-from text-[40px] md:text-[80px]">
+              <div className="flex items-center gap-4 py-1">
+                <div className="title-from my-auto text-[40px] md:text-[80px]">
                   From
                 </div>
                 <div className="hidden sm:block self-center mx-2 h-[2px] bg-white/70 w-28 md:w-36 lg:w-44" />
