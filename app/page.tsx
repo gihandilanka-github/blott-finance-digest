@@ -17,7 +17,7 @@ export default function Home() {
                 Latest News
               </div>
               <div className="flex items-center gap-4 py-1">
-                <div className="title-from my-auto text-[40px] md:text-[80px]">
+                <div className="title-from my-auto text-[40px] md:text-[80px] pt-2">
                   From
                 </div>
                 <div className="hidden sm:block self-center mx-2 h-[2px] bg-white/70 w-28 md:w-36 lg:w-44" />
@@ -25,11 +25,11 @@ export default function Home() {
                   <div className="title-world text-[40px] md:text-[80px]">
                     The World
                   </div>
-                  <div className="flex items-center w-[24px] h-[24px] rounded-full border-2 border-white self-start mt-2">
+                  <div className="flex items-center w-[20px] h-[20px] md:w-[28px] md:h-[28px] rounded-full border-2 border-white self-start mt-1 md:mt-2">
                     <Bitcoin
                       size={24}
                       strokeWidth={2.8}
-                      className="text-white p-1"
+                      className="text-white p-0.5 md:p-1"
                     />
                   </div>
                 </div>

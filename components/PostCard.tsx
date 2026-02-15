@@ -23,7 +23,7 @@ export default function PostCard({
         className="block"
       >
         <div
-          className={`w-full ${variant === 'large' ? 'h-[402px] md:h-[539px]' : 'h-[199px] md:h-[199px]'} bg-gray-800 rounded-t-md overflow-hidden relative`}
+          className={`w-full ${variant === 'large' ? 'h-[402px] md:h-[539px]' : 'h-[199px] md:h-[199px]'} bg-gray-800 rounded-md overflow-hidden relative`}
         >
           {item.thumbnail ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -50,7 +50,7 @@ export default function PostCard({
           )}
         </div>
         {variant !== 'large' && (
-          <div className="p-4 px-1 text-left rounded-b-md bg-black">
+          <div className="p-4 px-1 text-left">
             <h3 className="text-title text-[24px]">{item.title}</h3>
             <div className="mt-3 text-sm text-indigo-300">Read Article →</div>
           </div>
