@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import type { NewsItem } from '@/types/news';
+import { Button } from '@/components/ui/button';
 
 export default function PostCard({
   item,
@@ -26,12 +28,15 @@ export default function PostCard({
           className={`w-full ${variant === 'large' ? 'h-[402px] md:h-[539px]' : 'h-[199px] md:h-[199px]'} bg-gray-800 rounded-md overflow-hidden relative`}
         >
           {item.thumbnail ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={item.thumbnail}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={item.thumbnail}
+                alt={item.title}
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            </div>
           ) : (
             <div className="w-full h-full bg-gray-700" />
           )}
@@ -44,7 +49,26 @@ export default function PostCard({
                 <h3 className="text-white text-[24px] md:text-[26px] font-semibold mb-3">
                   {item.title}
                 </h3>
-                <div className="text-sm text-indigo-200">Read Article →</div>
+                <div className="flex items-baseline gap-2">
+                  <Button
+                    href={item.url}
+                    variant="ghost"
+                    className="px-0 py-0 gap-2"
+                  >
+                    <span className="text-[15px] underline underline-offset-12 decoration-white">
+                      Read Article
+                    </span>
+                    <span className="self-end flex items-center justify-center w-7 h-7 pb-2">
+                      <Image
+                        src="/assets/arrow.svg"
+                        alt="arrow"
+                        width={36}
+                        height={36}
+                        className="w-7 h-7"
+                      />
+                    </span>
+                  </Button>
+                </div>
               </div>
             </div>
           )}
@@ -52,7 +76,26 @@ export default function PostCard({
         {variant !== 'large' && (
           <div className="p-4 px-1 text-left">
             <h3 className="text-title text-[24px]">{item.title}</h3>
-            <div className="mt-3 text-sm text-indigo-300">Read Article →</div>
+            <div className="mt-3 flex items-center gap-2">
+              <Button
+                href={item.url}
+                variant="ghost"
+                className="px-0 py-0 gap-2"
+              >
+                <span className="text-[15px] underline underline-offset-12 decoration-white">
+                  Read Article
+                </span>
+                <span className="self-end flex items-center justify-center w-7 h-7 pb-2">
+                  <Image
+                    src="/assets/arrow.svg"
+                    alt="arrow"
+                    width={36}
+                    height={36}
+                    className="w-7 h-7"
+                  />
+                </span>
+              </Button>
+            </div>
           </div>
         )}
       </a>
