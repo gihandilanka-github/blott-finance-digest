@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import type { NewsItem } from '@/types/news';
-import { Button } from '@/components/ui/button';
+// Note: we render the "Read Article" visual as non-interactive elements
+// because the whole card is already wrapped in an anchor (<a>).
 
 export default function PostCard({
   item,
@@ -50,15 +51,11 @@ export default function PostCard({
                   {item.title}
                 </h3>
                 <div className="flex items-baseline gap-2">
-                  <Button
-                    href={item.url}
-                    variant="ghost"
-                    className="px-0 py-0 gap-2"
-                  >
+                  <span className="inline-flex items-center gap-2 px-0 py-0">
                     <span className="text-[15px] underline underline-offset-12 decoration-white">
                       Read Article
                     </span>
-                    <span className="self-end flex items-center justify-center w-7 h-7 pb-2">
+                    <span className="flex items-center justify-center w-7 h-7 pb-2">
                       <Image
                         src="/assets/arrow.svg"
                         alt="arrow"
@@ -67,7 +64,7 @@ export default function PostCard({
                         className="w-7 h-7"
                       />
                     </span>
-                  </Button>
+                  </span>
                 </div>
               </div>
             </div>
@@ -77,15 +74,11 @@ export default function PostCard({
           <div className="p-4 px-1 text-left">
             <h3 className="text-title text-[24px]">{item.title}</h3>
             <div className="mt-3 flex items-center gap-2">
-              <Button
-                href={item.url}
-                variant="ghost"
-                className="px-0 py-0 gap-2"
-              >
+              <span className="inline-flex items-center gap-2 px-0 py-0">
                 <span className="text-[15px] underline underline-offset-12 decoration-white">
                   Read Article
                 </span>
-                <span className="self-end flex items-center justify-center w-7 h-7 pb-2">
+                <span className="flex items-center justify-center w-7 h-7 pb-2">
                   <Image
                     src="/assets/arrow.svg"
                     alt="arrow"
@@ -94,7 +87,7 @@ export default function PostCard({
                     className="w-7 h-7"
                   />
                 </span>
-              </Button>
+              </span>
             </div>
           </div>
         )}
