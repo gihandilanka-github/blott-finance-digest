@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import NewsFeed from '@/components/NewsFeed';
 import { Bitcoin } from 'lucide-react';
+import { siteName } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: `${siteName} - Home`,
 };
 
 export default function Home() {
