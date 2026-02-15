@@ -1,8 +1,15 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  /* Local font files (placed in public/fonts/) */
+  /* Helvetica Now Display for main headings */
+  --font-heading: 'Helvetica Now Display';
+  /* Albra for the 'FROM' word */
+  --font-from: 'Albra';
+  /* Body font fallback */
+  --font-body: 'Roboto', system-ui, sans-serif;
 }
 
 @theme inline {
@@ -22,6 +29,86 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(
+    --font-body,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial
+  );
 }
 
+/* Load local font files */
+@font-face {
+  font-family: 'Helvetica Now Display';
+  src: url('/fonts/HelveticaNowDisplay.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('/fonts/Albra.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Heading and title styles (from Figma) */
+
+.title-1 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  line-height: 0.88;
+  letter-spacing: -1%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.title-2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.title-03 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 26px;
+  color: #ffffff;
+}
+
+/* More granular title parts to match Figma */
+.title-main {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 88%;
+  letter-spacing: -1%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.title-from {
+  font-family: var(--font-from);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 88%;
+  letter-spacing: -1%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.title-world {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 88%;
+  letter-spacing: -1%;
+  text-transform: uppercase;
+  color: #ffffff;
+}

@@ -1,17 +1,14 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import Image from 'next/image';
+import { Roboto } from 'next/font/google';
 import '@/styles/globals.css';
 import { siteName } from '@/lib/config';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const roboto = Roboto({
+  variable: '--font-body',
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['300', '400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -29,9 +26,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${roboto.variable} antialiased`}>
+        <header className="py-6 mb-10">
+          <div className="container mx-auto">
+            <Image
+              src="/assets/logo.png"
+              alt={siteName}
+              width={200}
+              height={48}
+              className="mx-auto"
+            />
+          </div>
+        </header>
         {children}
       </body>
     </html>
