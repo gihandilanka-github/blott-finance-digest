@@ -16,7 +16,7 @@ export default function FeaturedGrid({ items }: { items: NewsItem[] }) {
       <div className="md:col-span-1">
         {first && <PostCard item={first} variant="large" />}
       </div>
-      <div className="grid grid-cols-2 gap-4 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
         {second && <PostCard item={second} variant="small" />}
         {third && <PostCard item={third} variant="small" />}
       </div>
