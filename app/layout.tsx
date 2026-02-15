@@ -27,14 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} antialiased`}>
-        <header className="py-6 mb-10">
+        <header className="pt-11 pb-6 mb-10">
           <div className="container mx-auto">
             <Image
               src="/assets/logo.png"
               alt={siteName}
               width={200}
               height={48}
-              className="mx-auto"
+              className="mx-auto object-contain"
             />
           </div>
         </header>
