@@ -3,8 +3,8 @@
 1. Copy the example env file and provide your Finnhub API key (do NOT commit real keys):
 
 ```bash
-cp .env.example .env.local
-# then edit .env.local and set FINNHUB_API_KEY=<your_api_key_here>
+cp .env.example .env
+# then edit .env and set FINNHUB_API_KEY=<your_api_key_here>
 ```
 
 2. Install dependencies:
